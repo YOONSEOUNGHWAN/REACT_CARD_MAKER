@@ -1,11 +1,15 @@
+import { Route, Routes } from "react-router-dom";
+import styles from "./app.module.css";
+import Login from "./components/Login/login";
+import Maker from "./components/Maker/maker";
 
-import styles from './app.module.css';
-import Login from './components/Login/login';
-
-function App() {
+function App({ authService }) {
   return (
     <div className={styles.app}>
-      <Login/>
+      <Routes>
+        <Route path="/" element={<Login authService={authService} />} />
+        <Route path="/maker" element={<Maker authService={authService} />} />
+      </Routes>
     </div>
   );
 }
