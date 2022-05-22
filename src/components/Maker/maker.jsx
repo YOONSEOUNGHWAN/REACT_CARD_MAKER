@@ -1,8 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Editor from "../Editor/editor";
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
+import Preview from "../Preview/preview";
 import styles from "./maker.module.css";
 
 export default function Maker({ authService }) {
@@ -21,8 +23,12 @@ export default function Maker({ authService }) {
     });
   });
   return (
-    <section>
+    <section className={styles.maker}>
       <Header onLogout={onLogout} />
+      <div className={styles.container}>
+          <Editor/>
+          <Preview/>
+      </div>
       <Footer />
     </section>
   );
