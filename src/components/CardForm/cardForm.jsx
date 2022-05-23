@@ -21,6 +21,13 @@ export default function CardForm({ FileInput, card, updateCard, deleteCard }) {
       [event.currentTarget.name]: event.currentTarget.value,
     });
   };
+  const onFileChange = (file) => {
+    updateCard({
+      ...card,
+      fileName: file.name,
+      fileURL: file.url,
+    });
+  };
   return (
     <form className={styles.form}>
       <input
@@ -68,7 +75,7 @@ export default function CardForm({ FileInput, card, updateCard, deleteCard }) {
         onChange={onChange}
       />
       <div className={styles.imgInput}>
-        <FileInput />
+        <FileInput name={fileName} onFileChange={onFileChange} />
       </div>
       <Button name="Delete" onClick={onSubmit} />
     </form>
