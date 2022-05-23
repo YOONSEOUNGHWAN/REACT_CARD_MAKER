@@ -1,14 +1,15 @@
 import React from "react";
 import Button from "../Button/button";
-import ImageInput from "../Button/img_button";
+// 컴포넌트로 button받아왔으니 필요없음
+// import ImageInput from "../Button/img_button";
 import styles from "./cardForm.module.css";
-export default function CardForm({ card, updateCard, deleteCard }) {
+export default function CardForm({ FileInput, card, updateCard, deleteCard }) {
   const { name, company, title, email, message, theme, fileName, fileURL } =
     card;
 
   const onSubmit = (event) => {
-      event.preventDefault();
-      deleteCard(card);
+    event.preventDefault();
+    deleteCard(card);
   };
   const onChange = (event) => {
     if (event.currentTarget == null) {
@@ -67,7 +68,7 @@ export default function CardForm({ card, updateCard, deleteCard }) {
         onChange={onChange}
       />
       <div className={styles.imgInput}>
-        <ImageInput />
+        <FileInput />
       </div>
       <Button name="Delete" onClick={onSubmit} />
     </form>

@@ -7,7 +7,7 @@ import Header from "../Header/header";
 import Preview from "../Preview/preview";
 import styles from "./maker.module.css";
 
-export default function Maker({ authService }) {
+export default function Maker({ FileInput, authService }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [cards, setCards] = useState({
@@ -94,6 +94,7 @@ export default function Maker({ authService }) {
       <Header onLogout={onLogout} />
       <div className={styles.container}>
         <Editor
+          FileInput={FileInput}
           cards={cards}
           addCard={addCard}
           updateCard={updateCard}

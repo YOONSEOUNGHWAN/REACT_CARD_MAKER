@@ -1,10 +1,10 @@
 import React from "react";
 import { useRef } from "react";
 import Button from "../Button/button";
-import ImageInput from "../Button/img_button";
+// import ImageInput from "../Button/img_button";
 import styles from "./cardAddForm.module.css";
 
-export default function CardAddForm({ onAdd }) {
+export default function CardAddForm({ FileInput, onAdd }) {
   const formRef = useRef();
   const nameRef = useRef();
   const companyRef = useRef();
@@ -79,7 +79,8 @@ export default function CardAddForm({ onAdd }) {
         placeholder="message"
       ></textarea>
       <div className={styles.imgInput}>
-        <ImageInput />
+        {/* <ImageInput /> */}
+        <FileInput/>
       </div>
       <Button name="Add" onClick={onSubmit} />
     </form>
