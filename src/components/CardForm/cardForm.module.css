@@ -1,0 +1,48 @@
+@value makerBlack,makerWhite from '../../common/colors.css';
+
+.form {
+    display: flex;
+    width: 100%;
+    /* 이녀석 자세히 알아보기 */
+    /* 아이템 너비가 넓으면 한줄에 하나씩 떨어지도록 wrap해준다.  */
+    flex-wrap: wrap;
+    border-top: 1px solid makerBlack;
+    border-left: 1px solid makerBlack;
+    margin-bottom: 1em;
+}
+
+.input,
+.textarea,
+.select,
+.button,
+.fileInput{
+    font-size: 0.8rem;
+    width: 100%;
+    border: 0;
+    padding: 0.5em;
+    border-bottom: 1px solid makerBlack;
+    border-right: 1px solid makerBlack;
+    background: makerWhite;
+}
+
+/* 한줄에 3개씩 나오게 하기 */
+.input,
+.select{
+    flex: 1 1 30%;
+}
+
+.imgInput{
+    padding: 0;
+    flex: 1 1 50%;
+}
+.input:focus,
+.textarea:focus,
+.select:focus,
+.button:focus{
+    outline: 0;
+}
+
+
+.textarea{
+    flex-basis: 100%;
+}
