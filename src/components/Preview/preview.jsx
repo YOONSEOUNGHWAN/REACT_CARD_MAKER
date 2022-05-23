@@ -8,8 +8,8 @@ export default function Preview({ cards }) {
       <h1 className={styles.title}>Preview</h1>
       {/* return을 안 해줘도 됨 {} => return 필요함 */}
       <ul className={styles.cards}>
-        {cards.map((card) => (
-          <Card card={card} />
+        {Object.keys(cards).map((key) => (
+          <Card card={cards[key]} key={key} />
         ))}
       </ul>
     </section>
