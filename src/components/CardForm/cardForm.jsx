@@ -64,7 +64,7 @@ export default function CardForm({ FileInput, card, updateCard, deleteCard }) {
       <input
         className={styles.input}
         type="text"
-        name="  email"
+        name="email"
         value={email}
         onChange={onChange}
       />
