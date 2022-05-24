@@ -60,8 +60,7 @@ export default function CardAddForm({ FileInput, onAdd }) {
         ref={themeRef}
         className={styles.select}
         name="theme"
-        pal
-        ceholer="theme"
+        placeholder="theme"
       >
         <option placeholder="light">light</option>
         <option placeholder="dark">dark</option>
@@ -72,7 +71,6 @@ export default function CardAddForm({ FileInput, onAdd }) {
         className={styles.input}
         type="text"
         name="title"
-        pal
         placeholder="title"
       />
       <input
